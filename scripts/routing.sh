@@ -18,16 +18,17 @@ mtu=$(echo "$connection_info" | grep "MTU" | awk -F"'" '{print $2}')
 #dns1=$(echo "$connection_info" | grep "DNS \[0\]" | awk -F"'" '{print $2}')
 #dns2=$(echo "$connection_info" | grep "DNS \[1\]" | awk -F"'" '{print $2}')
 
+
+ip link set dev wwan0 up
+
 # Configure the interface
 ip link set dev wwan0 mtu $mtu
 
 echo "Adding address $ipv4_address to wwan0"
 ip addr add $ipv4_address dev wwan0
 
-echo "Adding default route $gateay to wwan0"
+echo "Adding default route via $gateway dev wwan0"
 ip route add default via $gateway dev wwan0
-
-ip link set dev wwan0 up
 
 # Check if 3proxy config directory exists and update configuration
 if [ -f "/etc/3proxy/conf/3proxy.cfg" ]; then
