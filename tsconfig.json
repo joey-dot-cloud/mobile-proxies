@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    /* Module Settings */
+    "target": "ESNext",                           /* Specify ECMAScript target version */
+    "module": "NodeNext",                         /* Specify module code generation method */
+    "moduleResolution": "NodeNext",               /* Specify how TypeScript looks up a file from a given module specifier */
+    "esModuleInterop": true,                      /* Enables CommonJS/AMD/UMD modules to be used with ES6 imports */
+    "resolveJsonModule": true,                    /* Allows importing JSON files as modules */
+    
+    /* Type Checking */
+    "strict": true,                               /* Enable all strict type-checking options */
+    "noImplicitAny": true,                        /* Raise error on expressions and declarations with an implied 'any' type */
+    "strictNullChecks": true,                     /* Enable strict null checks */
+    "strictFunctionTypes": true,                  /* Enable strict checking of function types */
+    "strictBindCallApply": true,                  /* Enable strict 'bind', 'call', and 'apply' methods on functions */
+    "noUnusedParameters": true,                   /* Report errors on unused parameters */
+    "noUnusedLocals": true,                       /* Report errors on unused locals */
+    "noUncheckedIndexedAccess": true,            /* Include undefined in index signature results */
+    "noImplicitOverride": true,                   /* Ensure overriding members are marked with override modifier */
+    "noPropertyAccessFromIndexSignature": true,   /* Require undeclared properties from index signatures to use element access */
+    "noFallthroughCasesInSwitch": true,          /* Report errors for fallthrough cases in switch statement */
+    "noErrorTruncation": true,                    /* Do not truncate error messages */
+    "allowUnreachableCode": false,                /* Report errors for unreachable code */
+    "typeRoots": [
+        "./node_modules/@types",
+        "./src/types"
+    ],
+    
+    /* Code Quality */
+    "noImplicitReturns": true,                   /* Report error when not all code paths in function return a value */
+    "exactOptionalPropertyTypes": true,           /* Enforce exact optional property types */
+    "useUnknownInCatchVariables": true,          /* Type catch clause variables as 'unknown' instead of 'any' */
+    
+    /* Build Options */
+    "removeComments": true,                       /* Remove comments in output */
+    //"incremental": true,                          /* Enable incremental compilation */
+    "sourceMap": false,                            /* Generate corresponding .map files */
+    "declaration": false,                          /* Generate corresponding .d.ts files */
+    "outDir": "./dist",                          /* Output directory for compiled files */
+    "rootDir": "./src",                          /* Root directory of source files */
+    "skipLibCheck": true,                        /* Skip type checking of declaration files */
+    "forceConsistentCasingInFileNames": true,     /* Ensure consistent casing in file names */
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
+  },
+  
+  /* Project Files Configuration */
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",                              /* Files to be excluded from compilation */
+    "**/*.test.ts"                              /* Exclude test files from production build */
+  ]
+}

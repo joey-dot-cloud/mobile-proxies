@@ -1,0 +1,27 @@
+{
+  "name": "mobile-proxies",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/app.tsx",
+    "format": "prettier --write src",
+    "build": "node -e \"process.exit(require('child_process').spawnSync(process.platform==='win32'?'del':'rm',[process.platform==='win32'?['/s','/q','/f','dist']:['-rf','dist']],{shell:true}).status)\" && tsc"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.5.0",
+    "execa": "^9.5.2",
+    "hono": "^4.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

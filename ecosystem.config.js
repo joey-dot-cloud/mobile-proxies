@@ -1,8 +1,7 @@
 module.exports = {
   apps: [{
     name: "mobile-proxies",
-    script: "server.py",
-    cwd: "/root/",
-    interpreter: "python3"
+    script: "/dist/app.js",
+    cwd: "/root/"
   }]
 }
